@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>David Kayigamba | Developer • DevOps • Cyber Security • Databases</title>
+  <meta name="description" content="Portfolio of David Kayigamba — software development, DevOps, cyber security and database engineering." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+          colors: { ink: '#0b1220', panel: '#111a2e', line: '#22304d' }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background: #0b1220; }
+    .glow { background: radial-gradient(600px circle at 20% 0%, rgba(56,189,248,.18), transparent 60%),
+                       radial-gradient(500px circle at 90% 20%, rgba(52,211,153,.12), transparent 60%); }
+    .slide { transition: opacity .7s ease, transform .7s ease; }
+    .slide.hidden-slide { opacity: 0; pointer-events: none; transform: scale(.98); position: absolute; inset: 0; }
+    .grid-bg { background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+                                 linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+               background-size: 32px 32px; }
+    .bar > span { display:block; height:100%; border-radius:9999px; background: linear-gradient(90deg,#38bdf8,#34d399); }
+  </style>
+</head>
+<body class="font-sans text-slate-200 antialiased">
+
+  <!-- NAV -->
+  <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-ink/80 border-b border-line">
+    <nav class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+      <a href="#home" class="font-extrabold text-lg text-white tracking-tight">
+        David<span class="text-sky-400"> Kayigamba</span>
+      </a>
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <li><a class="hover:text-sky-400 transition" href="#about">About</a></li>
+        <li><a class="hover:text-sky-400 transition" href="#showcase">Showcase</a></li>
+        <li><a class="hover:text-sky-400 transition" href="#skills">Skills</a></li>
+        <li><a class="hover:text-sky-400 transition" href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="hidden md:inline-block px-4 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-ink font-semibold text-sm transition">Hire Me</a>
+      <button id="menuBtn" class="md:hidden p-2 text-slate-200" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </nav>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-line bg-ink px-5 py-4 space-y-3 text-slate-200 font-medium">
+      <a class="block" href="#about">About</a>
+      <a class="block" href="#showcase">Showcase</a>
+      <a class="block" href="#skills">Skills</a>
+      <a class="block" href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="glow relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-60 pointer-events-none"></div>
+    <div class="relative max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-flex items-center gap-2 text-xs font-semibold text-emerald-300 bg-emerald-400/10 border border-emerald-400/30 rounded-full px-3 py-1">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Available for opportunities
+        </span>
+        <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+          Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-400">David Kayigamba</span>
+        </h1>
+        <p class="mt-4 text-xl text-slate-300 font-medium h-8">
+          <span id="typed" class="text-sky-300"></span><span class="animate-pulse text-sky-300">|</span>
+        </p>
+        <p class="mt-5 text-slate-300 text-lg leading-relaxed max-w-xl">
+          I build reliable software, automate delivery pipelines, secure systems and design fast, well-structured databases — turning ideas into dependable products.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#showcase" class="px-6 py-3 rounded-lg bg-sky-500 hover:bg-sky-400 text-ink font-semibold transition">View My Work</a>
+          <a href="#contact" class="px-6 py-3 rounded-lg border border-slate-500 hover:border-sky-400 hover:text-sky-300 text-white font-semibold transition">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <div class="relative">
+          <div class="absolute -inset-3 rounded-full bg-gradient-to-tr from-sky-400 to-emerald-400 blur-xl opacity-40"></div>
+          <!-- Save your photo next to this file as profile.jpg -->
+          <img src="profile.jpg" alt="David Kayigamba"
+               class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full object-cover border-4 border-sky-400/60 bg-panel"
+               onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect width=%22200%22 height=%22200%22 fill=%22%23111a2e%22/><text x=%2250%25%22 y=%2255%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2272%22 font-weight=%22700%22 fill=%22%2338bdf8%22>DK</text></svg>'" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-20 border-t border-line">
+    <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-3 gap-10">
+      <div class="md:col-span-2">
+        <h2 class="text-3xl font-bold text-white">About Me</h2>
+        <div class="mt-2 h-1 w-16 bg-sky-400 rounded"></div>
+        <p class="mt-6 text-slate-300 text-lg leading-relaxed">
+          I'm <strong class="text-white">David Kayigamba</strong>, a technology professional focused on building secure, scalable and well-automated systems.
+          I enjoy working across the full stack of modern engineering — writing clean code, shipping it through CI/CD pipelines,
+          protecting it against threats, and storing data efficiently.
+        </p>
+        <p class="mt-4 text-slate-300 text-lg leading-relaxed">
+          My goal is simple: deliver solutions that are fast, safe and easy to maintain.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-4 content-start">
+        <div class="bg-panel border border-line rounded-xl p-5 text-center">
+          <div class="text-3xl font-extrabold text-sky-400">4</div>
+          <div class="text-sm text-slate-300 mt-1">Core Disciplines</div>
+        </div>
+        <div class="bg-panel border border-line rounded-xl p-5 text-center">
+          <div class="text-3xl font-extrabold text-emerald-400">24/7</div>
+          <div class="text-sm text-slate-300 mt-1">Automation Mindset</div>
+        </div>
+        <div class="bg-panel border border-line rounded-xl p-5 text-center col-span-2">
+          <div class="text-3xl font-extrabold text-white">Secure by Design</div>
+          <div class="text-sm text-slate-300 mt-1">Security in every layer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDER SHOWCASE -->
+  <section id="showcase" class="py-20 border-t border-line bg-panel/40">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold text-white">Professional Showcase</h2>
+        <div class="mt-2 h-1 w-16 bg-sky-400 rounded mx-auto"></div>
+        <p class="mt-4 text-slate-300">Four areas where I deliver real value.</p>
+      </div>
+
+      <div id="slider" class="relative mt-10 h-[380px] sm:h-[340px] rounded-2xl overflow-hidden border border-line bg-ink">
+
+        <!-- Slide 1: Coding -->
+        <div class="slide absolute inset-0 grid sm:grid-cols-2 items-center gap-6 p-8 bg-gradient-to-br from-sky-950 via-ink to-ink">
+          <div>
+            <div class="text-sky-400 font-mono text-sm font-semibold">01 / CODING</div>
+            <h3 class="mt-2 text-3xl font-bold text-white">Software Development</h3>
+            <p class="mt-3 text-slate-300">Clean, testable and maintainable code for web apps, APIs and automation tools.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
+              <span class="px-3 py-1 rounded-full bg-sky-400/15 text-sky-200 border border-sky-400/30">JavaScript</span>
+              <span class="px-3 py-1 rounded-full bg-sky-400/15 text-sky-200 border border-sky-400/30">Python</span>
+              <span class="px-3 py-1 rounded-full bg-sky-400/15 text-sky-200 border border-sky-400/30">HTML / CSS</span>
+              <span class="px-3 py-1 rounded-full bg-sky-400/15 text-sky-200 border border-sky-400/30">APIs</span>
+            </div>
+          </div>
+          <div class="hidden sm:block">
+            <svg viewBox="0 0 320 200" class="w-full max-w-sm mx-auto">
+              <rect x="10" y="10" width="300" height="180" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-opacity=".5"/>
+              <circle cx="30" cy="28" r="5" fill="#f87171"/><circle cx="48" cy="28" r="5" fill="#fbbf24"/><circle cx="66" cy="28" r="5" fill="#34d399"/>
+              <g font-family="monospace" font-size="13">
+                <text x="28" y="65" fill="#38bdf8">function</text><text x="92" y="65" fill="#e2e8f0"> build() {</text>
+                <text x="44" y="90" fill="#34d399">const</text><text x="90" y="90" fill="#e2e8f0"> app = ship();</text>
+                <text x="44" y="115" fill="#a78bfa">return</text><text x="92" y="115" fill="#e2e8f0"> quality;</text>
+                <text x="28" y="140" fill="#e2e8f0">}</text>
+              </g>
+              <rect x="28" y="156" width="8" height="16" fill="#38bdf8"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Slide 2: DevOps -->
+        <div class="slide hidden-slide grid sm:grid-cols-2 items-center gap-6 p-8 bg-gradient-to-br from-emerald-950 via-ink to-ink">
+          <div>
+            <div class="text-emerald-400 font-mono text-sm font-semibold">02 / DEVOPS</div>
+            <h3 class="mt-2 text-3xl font-bold text-white">DevOps &amp; Automation</h3>
+            <p class="mt-3 text-slate-300">CI/CD pipelines, containers and infrastructure that deploy fast and run reliably.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
+              <span class="px-3 py-1 rounded-full bg-emerald-400/15 text-emerald-200 border border-emerald-400/30">Git</span>
+              <span class="px-3 py-1 rounded-full bg-emerald-400/15 text-emerald-200 border border-emerald-400/30">Docker</span>
+              <span class="px-3 py-1 rounded-full bg-emerald-400/15 text-emerald-200 border border-emerald-400/30">CI/CD</span>
+              <span class="px-3 py-1 rounded-full bg-emerald-400/15 text-emerald-200 border border-emerald-400/30">Linux</span>
+            </div>
+          </div>
+          <div class="hidden sm:block">
+            <svg viewBox="0 0 320 200" class="w-full max-w-sm mx-auto">
+              <g fill="#0f172a" stroke="#34d399" stroke-width="2">
+                <rect x="15" y="75" width="60" height="50" rx="10"/><rect x="130" y="75" width="60" height="50" rx="10"/><rect x="245" y="75" width="60" height="50" rx="10"/>
+              </g>
+              <g stroke="#34d399" stroke-width="3" stroke-dasharray="6 6" fill="none">
+                <path d="M75 100 H130"><animate attributeName="stroke-dashoffset" from="12" to="0" dur="1s" repeatCount="indefinite"/></path>
+                <path d="M190 100 H245"><animate attributeName="stroke-dashoffset" from="12" to="0" dur="1s" repeatCount="indefinite"/></path>
+              </g>
+              <g font-family="Arial" font-size="13" font-weight="700" fill="#d1fae5" text-anchor="middle">
+                <text x="45" y="105">BUILD</text><text x="160" y="105">TEST</text><text x="275" y="105">DEPLOY</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Slide 3: Cyber -->
+        <div class="slide hidden-slide grid sm:grid-cols-2 items-center gap-6 p-8 bg-gradient-to-br from-rose-950 via-ink to-ink">
+          <div>
+            <div class="text-rose-400 font-mono text-sm font-semibold">03 / CYBER SECURITY</div>
+            <h3 class="mt-2 text-3xl font-bold text-white">Cyber Security</h3>
+            <p class="mt-3 text-slate-300">Protecting systems and data through secure configuration, monitoring and risk awareness.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
+              <span class="px-3 py-1 rounded-full bg-rose-400/15 text-rose-200 border border-rose-400/30">Network Security</span>
+              <span class="px-3 py-1 rounded-full bg-rose-400/15 text-rose-200 border border-rose-400/30">Hardening</span>
+              <span class="px-3 py-1 rounded-full bg-rose-400/15 text-rose-200 border border-rose-400/30">Vulnerability Scanning</span>
+              <span class="px-3 py-1 rounded-full bg-rose-400/15 text-rose-200 border border-rose-400/30">Encryption</span>
+            </div>
+          </div>
+          <div class="hidden sm:block">
+            <svg viewBox="0 0 320 200" class="w-full max-w-sm mx-auto">
+              <path d="M160 20 L250 55 V105 C250 150 210 175 160 190 C110 175 70 150 70 105 V55 Z" fill="#1f0a12" stroke="#fb7185" stroke-width="3"/>
+              <rect x="135" y="95" width="50" height="40" rx="6" fill="#fb7185"/>
+              <path d="M143 95 V82 a17 17 0 0 1 34 0 V95" fill="none" stroke="#fda4af" stroke-width="6"/>
+              <circle cx="160" cy="113" r="5" fill="#1f0a12"/>
+              <circle cx="160" cy="105" r="95" fill="none" stroke="#fb7185" stroke-opacity=".25"><animate attributeName="r" values="70;100;70" dur="3s" repeatCount="indefinite"/></circle>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Slide 4: Database -->
+        <div class="slide hidden-slide grid sm:grid-cols-2 items-center gap-6 p-8 bg-gradient-to-br from-amber-950 via-ink to-ink">
+          <div>
+            <div class="text-amber-400 font-mono text-sm font-semibold">04 / DATABASES</div>
+            <h3 class="mt-2 text-3xl font-bold text-white">Database Engineering</h3>
+            <p class="mt-3 text-slate-300">Well-designed schemas, optimized queries, backups and secure data access.</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
+              <span class="px-3 py-1 rounded-full bg-amber-400/15 text-amber-200 border border-amber-400/30">SQL</span>
+              <span class="px-3 py-1 rounded-full bg-amber-400/15 text-amber-200 border border-amber-400/30">MySQL / PostgreSQL</span>
+              <span class="px-3 py-1 rounded-full bg-amber-400/15 text-amber-200 border border-amber-400/30">Data Modeling</span>
+              <span class="px-3 py-1 rounded-full bg-amber-400/15 text-amber-200 border border-amber-400/30">Backups</span>
+            </div>
+          </div>
+          <div class="hidden sm:block">
+            <svg viewBox="0 0 320 200" class="w-full max-w-sm mx-auto">
+              <g fill="#1c1305" stroke="#fbbf24" stroke-width="3">
+                <path d="M100 50 v100 c0 17 27 30 60 30 s60-13 60-30 V50"/>
+                <ellipse cx="160" cy="50" rx="60" ry="22"/>
+              </g>
+              <g fill="none" stroke="#fbbf24" stroke-width="3">
+                <path d="M100 83 c0 17 27 30 60 30 s60-13 60-30"/>
+                <path d="M100 117 c0 17 27 30 60 30 s60-13 60-30"/>
+              </g>
+              <circle cx="160" cy="50" r="5" fill="#fbbf24"><animate attributeName="opacity" values="1;.2;1" dur="1.5s" repeatCount="indefinite"/></circle>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <button id="prev" aria-label="Previous" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white text-xl z-10">&#8249;</button>
+        <button id="next" aria-label="Next" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white text-xl z-10">&#8250;</button>
+        <div id="dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-20 border-t border-line">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold text-white">Skills &amp; Expertise</h2>
+        <div class="mt-2 h-1 w-16 bg-sky-400 rounded mx-auto"></div>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-panel border border-line rounded-xl p-6 hover:-translate-y-1 hover:border-sky-400 transition">
+          <div class="w-12 h-12 rounded-lg bg-sky-400/15 text-sky-300 flex items-center justify-center text-2xl font-mono font-bold">&lt;/&gt;</div>
+          <h3 class="mt-4 text-lg font-bold text-white">Coding</h3>
+          <p class="mt-2 text-sm text-slate-300">Web development, scripting and API design with clean practices.</p>
+          <div class="mt-4 h-2 bg-ink rounded-full bar"><span style="width:85%"></span></div>
+        </div>
+        <div class="bg-panel border border-line rounded-xl p-6 hover:-translate-y-1 hover:border-emerald-400 transition">
+          <div class="w-12 h-12 rounded-lg bg-emerald-400/15 text-emerald-300 flex items-center justify-center text-2xl">&#9881;</div>
+          <h3 class="mt-4 text-lg font-bold text-white">DevOps</h3>
+          <p class="mt-2 text-sm text-slate-300">CI/CD, containers, Linux servers and infrastructure automation.</p>
+          <div class="mt-4 h-2 bg-ink rounded-full bar"><span style="width:80%"></span></div>
+        </div>
+        <div class="bg-panel border border-line rounded-xl p-6 hover:-translate-y-1 hover:border-rose-400 transition">
+          <div class="w-12 h-12 rounded-lg bg-rose-400/15 text-rose-300 flex items-center justify-center text-2xl">&#128274;</div>
+          <h3 class="mt-4 text-lg font-bold text-white">Cyber Security</h3>
+          <p class="mt-2 text-sm text-slate-300">Secure configuration, threat awareness and vulnerability assessment.</p>
+          <div class="mt-4 h-2 bg-ink rounded-full bar"><span style="width:78%"></span></div>
+        </div>
+        <div class="bg-panel border border-line rounded-xl p-6 hover:-translate-y-1 hover:border-amber-400 transition">
+          <div class="w-12 h-12 rounded-lg bg-amber-400/15 text-amber-300 flex items-center justify-center text-2xl">&#128451;</div>
+          <h3 class="mt-4 text-lg font-bold text-white">Databases</h3>
+          <p class="mt-2 text-sm text-slate-300">Schema design, SQL optimization, backup and recovery.</p>
+          <div class="mt-4 h-2 bg-ink rounded-full bar"><span style="width:82%"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT Information -->
+  <section id="contact" class="py-20 border-t border-line bg-panel/40">
+    <div class="max-w-3xl mx-auto px-5 text-center">
+      <h2 class="text-3xl font-bold text-white">Let's Work Together</h2>
+      <div class="mt-2 h-1 w-16 bg-sky-400 rounded mx-auto"></div>
+      <p class="mt-5 text-slate-300 text-lg">Have a project, a role or an idea? Send me a message and I'll get back to you.</p>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <!-- Replace the links below with your real details -->
+        <a href="mailto:your-email@example.com" class="px-6 py-3 rounded-lg bg-sky-500 hover:bg-sky-400 text-ink font-semibold transition">Email Me</a>
+        <a href="https://github.com/your-username" target="_blank" rel="noopener" class="px-6 py-3 rounded-lg border border-slate-500 hover:border-sky-400 hover:text-sky-300 text-white font-semibold transition">GitHub</a>
+        <a href="https://linkedin.com/in/your-username" target="_blank" rel="noopener" class="px-6 py-3 rounded-lg border border-slate-500 hover:border-sky-400 hover:text-sky-300 text-white font-semibold transition">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-6 text-center text-sm text-slate-400 border-t border-line">
+    &copy; <span id="year"></span> David Kayigamba. All rights reserved.
+  </footer>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Typing effect
+    const words = ['Software Developer', 'DevOps Engineer', 'Cyber Security Enthusiast', 'Database Specialist'];
+    const typed = document.getElementById('typed');
+    let w = 0, c = 0, del = false;
+    (function type() {
+      const word = words[w];
+      typed.textContent = word.slice(0, c);
+      if (!del && c < word.length) c++;
+      else if (!del) { del = true; return setTimeout(type, 1400); }
+      else if (c > 0) c--;
+      else { del = false; w = (w + 1) % words.length; }
+      setTimeout(type, del ? 40 : 80);
+    })();
+
+    // Slider
+    const slides = document.querySelectorAll('#slider .slide');
+    const dotsBox = document.getElementById('dots');
+    let idx = 0, timer;
+    slides.forEach((_, i) => {
+      const d = document.createElement('button');
+      d.setAttribute('aria-label', 'Slide ' + (i + 1));
+      d.className = 'w-2.5 h-2.5 rounded-full bg-white/40 transition';
+      d.addEventListener('click', () => { show(i); restart(); });
+      dotsBox.appendChild(d);
+    });
+    function show(n) {
+      idx = (n + slides.length) % slides.length;
+      slides.forEach((s, i) => s.classList.toggle('hidden-slide', i !== idx));
+      [...dotsBox.children].forEach((d, i) => {
+        d.classList.toggle('bg-white', i === idx);
+        d.classList.toggle('bg-white/40', i !== idx);
+        d.classList.toggle('w-6', i === idx);
+      });
+    }
+    function restart() { clearInterval(timer); timer = setInterval(() => show(idx + 1), 4500); }
+    document.getElementById('prev').addEventListener('click', () => { show(idx - 1); restart(); });
+    document.getElementById('next').addEventListener('click', () => { show(idx + 1); restart(); });
+    const slider = document.getElementById('slider');
+    slider.addEventListener('mouseenter', () => clearInterval(timer));
+    slider.addEventListener('mouseleave', restart);
+    show(0); restart();
+  </script>
+</body>
+</html>
