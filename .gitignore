@@ -1,0 +1,19 @@
+# Local env files (secrets such as EXA_API_KEY must never be committed)
+.env
+.env.local
+.env.*.local
+*.env
+
+# Keep the committed template
+!.env.example
+
+# Dependencies and logs
+node_modules/
+npm-debug.log*
+*.log
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+.freebuff/

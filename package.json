@@ -1,0 +1,14 @@
+{
+  "name": "thickbing-lin-cyber",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ThickBing Lin Cyber marketing site with a server-side Exa threat-intel search",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs"
+  },
+  "dependencies": {
+    "exa-js": "2.25.0"
+  }
+}
