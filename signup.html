@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | ThickBing Lin Cyber</title>
+  <meta name="description" content="Create your ThickBing Lin Cyber account and register for online security services." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+          colors: { ink: '#0b1220', panel: '#111a2e', line: '#22304d' }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background: #0b1220; }
+    .grid-bg { background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+                                 linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+               background-size: 32px 32px; }
+    .field { width: 100%; px: 0; }
+    input:focus, select:focus { outline: none; }
+  </style>
+</head>
+<body class="font-sans text-slate-200 antialiased min-h-screen">
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-ink/85 border-b border-line">
+    <nav class="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 font-extrabold text-lg text-white tracking-tight">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-sky-400 to-emerald-500 flex items-center justify-center">
+          <svg class="w-5 h-5 text-ink" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2 4 5.5v6.1C4 16.7 7.4 21 12 22c4.6-1 8-5.3 8-10.4V5.5L12 2Zm0 4.5a3 3 0 0 1 3 3v1.2h1.8v4.6H7.2v-4.6H9V9.5a3 3 0 0 1 3-3Zm0 1.5a1.5 1.5 0 0 0-1.5 1.5v.9h3v-.9A1.5 1.5 0 0 0 12 8Z"/></svg>
+        </span>
+        ThickBing <span class="text-sky-400">Lin Cyber</span>
+      </a>
+      <div class="flex items-center gap-3 text-sm font-medium">
+        <a href="index.html#services" class="hidden sm:block text-slate-300 hover:text-sky-400 transition">Services</a>
+        <span class="text-slate-500 hidden sm:block">|</span>
+        <span class="text-slate-400 hidden sm:block">Already a member?</span>
+        <a href="login.html" class="px-4 py-2 rounded-lg border border-line hover:border-sky-400 hover:text-sky-300 text-white font-semibold transition">Log In</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-5 py-10 lg:py-14 grid lg:grid-cols-5 gap-10 items-start">
+
+    <!-- LEFT: benefits panel -->
+    <aside class="lg:col-span-2 relative rounded-2xl overflow-hidden border border-line lg:sticky lg:top-24">
+      <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Secure data center" loading="lazy"
+           class="absolute inset-0 w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-b from-ink/85 via-ink/90 to-ink"></div>
+      <div class="relative p-8">
+        <span class="text-xs font-mono font-semibold tracking-widest text-emerald-400">JOIN 500+ ORGANIZATIONS</span>
+        <h2 class="mt-3 text-2xl font-extrabold text-white leading-snug">Why join ThickBing Lin Cyber?</h2>
+        <ul class="mt-6 space-y-4 text-sm">
+          <li class="flex gap-3">
+            <span class="shrink-0 w-6 h-6 rounded-full bg-emerald-400/15 border border-emerald-400/40 flex items-center justify-center text-emerald-400 text-xs font-bold">✓</span>
+            <span class="text-slate-300"><strong class="text-white">Live security dashboard</strong> — see threats, scans and reports in real time.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="shrink-0 w-6 h-6 rounded-full bg-emerald-400/15 border border-emerald-400/40 flex items-center justify-center text-emerald-400 text-xs font-bold">✓</span>
+            <span class="text-slate-300"><strong class="text-white">Free first assessment</strong> — every new member gets a vulnerability scan on us.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="shrink-0 w-6 h-6 rounded-full bg-emerald-400/15 border border-emerald-400/40 flex items-center justify-center text-emerald-400 text-xs font-bold">✓</span>
+            <span class="text-slate-300"><strong class="text-white">Dedicated advisor</strong> — a certified expert assigned to your account.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="shrink-0 w-6 h-6 rounded-full bg-emerald-400/15 border border-emerald-400/40 flex items-center justify-center text-emerald-400 text-xs font-bold">✓</span>
+            <span class="text-slate-300"><strong class="text-white">Threat intelligence feed</strong> — early warnings before attacks reach you.</span>
+          </li>
+        </ul>
+        <div class="mt-8 border-t border-line pt-6 flex items-center gap-3 text-xs text-slate-400">
+          <svg class="w-5 h-5 text-sky-400 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2 4 5.5v6.1C4 16.7 7.4 21 12 22c4.6-1 8-5.3 8-10.4V5.5L12 2Z"/></svg>
+          Your data is encrypted end-to-end and never shared. ISO 27001 &amp; GDPR compliant.
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT: registration form -->
+    <section class="lg:col-span-3 bg-panel border border-line rounded-2xl p-7 sm:p-10">
+      <div class="flex items-center gap-3">
+        <span class="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-400 to-emerald-500 flex items-center justify-center">
+          <svg class="w-6 h-6 text-ink" fill="currentColor" viewBox="0 0 24 24"><path d="M15 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-3.3 0-8 1.7-8 5v2h11.2a6.7 6.7 0 0 1-.2-1.6V14h-3Zm6-2h-2V9h-2v3h-2v2h2v3h2v-3h2v-2Z"/></svg>
+        </span>
+        <div>
+          <h1 class="text-2xl font-extrabold text-white leading-tight">Create Your Account</h1>
+          <p class="text-sm text-slate-400">Fill the form below to join our online services.</p>
+        </div>
+      </div>
+
+      <!-- success banner -->
+      <div id="successBanner" class="hidden mt-6 rounded-xl border border-emerald-400/40 bg-emerald-400/10 p-4 text-sm text-emerald-300">
+        <strong class="font-bold">Registration successful! ✓</strong> Welcome to ThickBing Lin Cyber. Check your inbox for the verification link, then
+        <a href="login.html" class="underline font-semibold">log in</a> to activate your dashboard.
+      </div>
+
+      <form id="signupForm" novalidate class="mt-8 space-y-5">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm font-semibold text-slate-300 mb-1.5" for="fullName">Full Name *</label>
+            <input id="fullName" name="fullName" type="text" placeholder="e.g. Jane Uwase" required
+                   class="w-full px-4 py-3 rounded-lg bg-ink border border-line text-white placeholder:text-slate-600 focus:border-sky-400 transition" />
+            <p class="err hidden mt-1 text-xs text-rose-400 font-semibold">Please enter your full name.</p>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-slate-300 mb-1.5" for="email">Work Email *</label>
+            <input id="email" name="email" type="email" placeholder="you@company.com" required
+                   class="w-full px-4 py-3 rounded-lg bg-ink border border-line text-white placeholder:text-slate-600 focus:border-sky-400 transition" />
+            <p class="err hidden mt-1 text-xs text-rose-400 font-semibold">Please enter a valid email address.</p>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-slate-300 mb-1.5" for="phone">Phone Number *</label>
+            <input id="phone" name="phone" type="tel" placeholder="+250 78 000 0000" required
+                   class="w-full px-4 py-3 rounded-lg bg-ink border border-line text-white placeholder:text-slate-600 focus:border-sky-400 transition" />
+            <p class="err hidden mt-1 text-xs text-rose-400 font-semibold">Please enter your phone number.</p>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-slate-300 mb-1.5" for="org">Organization *</label>
+            <input id="org" name="org" type="text" placeholder="Company or institution" required
+                   class="w-full px-4 py-3 rounded-lg bg-ink border border-line text-white placeholder:text-slate-600 focus:border-sky-400 transition" />
+            <p class="err hidden mt-1 text-xs text-rose-400 font-semibold">Please enter your organization.</p>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-300 mb-1.5" for="service">Service You Want to Join *</label>
+          <select id="service" name="service" required
+                  class="w-full px-4 py-3 rounded-lg bg-ink border border-line text-white focus:border-sky-400 transition">
+            <option value="" class="bg-ink">— Select a service —</option>
+            <option value="soc" class="bg-ink">24/7 Threat Monitoring (SOC)</option>
+            <option value="pentest" class="bg-ink">Penetration Testing</option>
+            <option value="cloud" class="bg-ink">Cloud Security</option>
+            <option value="network" class="bg-ink">Network Defense</option>
+            <option value="data" class="bg-ink">Data Protection &amp; Compliance</option>
+            <option value="training" class="bg-ink">Security Awareness Training</option>
+            <option value="all" class="bg-ink">Full Suite — All Services</option>
+          </select>
+          <p class="err hidden mt-1 text-xs text-rose-400 font-semibold">Please choose a service.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm font-semibold text-slate-300 mb-1.5" for="password">Password *</label>
+            <div class="relative">
+              <input id="password" name="password" type="password" placeholder="Min. 8 characters" minlength="8" required
+                     class="w-full px-4 py-3 pr-12 rounded-lg bg-ink border border-line text-white placeholder:text-slate-600 focus:border-sky-400 transition" />
+              <button type="button" data-toggle="password" class="togglePw absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400 hover:text-sky-300">SHOW</button>
+            </div>
+            <p class="err hidden mt-1 text-xs text-rose-400 font-semibold">Password must be at least 8 characters.</p>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-slate-300 mb-1.5" for="confirm">Confirm Password *</label>
+            <div class="relative">
+              <input id="confirm" name="confirm" type="password" placeholder="Repeat password" minlength="8" required
+                     class="w-full px-4 py-3 pr-12 rounded-lg bg-ink border border-line text-white placeholder:text-slate-600 focus:border-sky-400 transition" />
+              <button type="button" data-toggle="confirm" class="togglePw absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400 hover:text-sky-300">SHOW</button>
+            </div>
+            <p class="err hidden mt-1 text-xs text-rose-400 font-semibold">Passwords do not match.</p>
+          </div>
+        </div>
+
+        <label class="flex items-start gap-3 text-sm text-slate-400 cursor-pointer">
+          <input id="terms" type="checkbox" class="mt-0.5 w-4 h-4 rounded accent-sky-500" />
+          <span>I agree to the <a href="#" class="text-sky-400 hover:text-sky-300 font-semibold">Terms of Service</a> and <a href="#" class="text-sky-400 hover:text-sky-300 font-semibold">Privacy Policy</a>, and consent to security verification.</span>
+        </label>
+        <p id="termsErr" class="hidden -mt-3 text-xs text-rose-400 font-semibold">You must accept the terms to continue.</p>
+
+        <button type="submit"
+                class="w-full py-3.5 rounded-lg bg-gradient-to-r from-sky-500 to-emerald-500 hover:from-sky-400 hover:to-emerald-400 text-ink font-bold transition shadow-lg shadow-sky-500/20">
+          Create Account &amp; Join
+        </button>
+
+        <p class="text-center text-sm text-slate-400">
+          Already registered? <a href="login.html" class="text-sky-400 hover:text-sky-300 font-semibold">Log in here</a>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="border-t border-line mt-10">
+    <div class="max-w-7xl mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+      <p>&copy; <span id="year"></span> ThickBing Lin Cyber. All rights reserved.</p>
+      <p class="flex gap-5"><a href="index.html#services" class="hover:text-sky-400 transition">Services</a><a href="index.html#contact" class="hover:text-sky-400 transition">Contact</a><a href="#" class="hover:text-sky-400 transition">Privacy</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Show/hide password
+    document.querySelectorAll('.togglePw').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const input = document.getElementById(btn.dataset.toggle);
+        const showing = input.type === 'text';
+        input.type = showing ? 'password' : 'text';
+        btn.textContent = showing ? 'SHOW' : 'HIDE';
+      });
+    });
+
+    // Form validation (front-end demo — wire to a backend to store accounts)
+    const form = document.getElementById('signupForm');
+    const showErr = (input, on) => {
+      const wrap = input.closest('div');
+      const p = wrap.querySelector('.err') || wrap.parentElement.querySelector('.err');
+      if (p) p.classList.toggle('hidden', !on);
+      input.classList.toggle('border-rose-500', on);
+    };
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let ok = true;
+      const name = form.fullName, email = form.email, phone = form.phone, org = form.org,
+            service = form.service, pw = form.password, confirm = form.confirm, terms = document.getElementById('terms');
+
+      if (name.value.trim().length < 2) { showErr(name, true); ok = false; } else showErr(name, false);
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { showErr(email, true); ok = false; } else showErr(email, false);
+      if (phone.value.trim().length < 6) { showErr(phone, true); ok = false; } else showErr(phone, false);
+      if (org.value.trim().length < 2) { showErr(org, true); ok = false; } else showErr(org, false);
+      if (!service.value) { showErr(service, true); ok = false; } else showErr(service, false);
+      if (pw.value.length < 8) { showErr(pw, true); ok = false; } else showErr(pw, false);
+      if (confirm.value !== pw.value || !confirm.value) { showErr(confirm, true); ok = false; } else showErr(confirm, false);
+      document.getElementById('termsErr').classList.toggle('hidden', terms.checked);
+      if (!terms.checked) ok = false;
+
+      if (!ok) return;
+      form.classList.add('hidden');
+      const banner = document.getElementById('successBanner');
+      banner.classList.remove('hidden');
+      banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  </script>
+</body>
+</html>

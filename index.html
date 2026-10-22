@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>David Kayigamba | Developer • DevOps • Cyber Security • Databases</title>
-  <meta name="description" content="Portfolio of David Kayigamba — software development, DevOps, cyber security and database engineering." />
+  <title>ThickBing Lin Cyber | Enterprise Cybersecurity Services</title>
+  <meta name="description" content="ThickBing Lin Cyber — 24/7 threat monitoring, penetration testing, cloud security and more. Register today for our online security services." />
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <script>
@@ -19,336 +19,451 @@
   </script>
   <style>
     body { background: #0b1220; }
-    .glow { background: radial-gradient(600px circle at 20% 0%, rgba(56,189,248,.18), transparent 60%),
-                       radial-gradient(500px circle at 90% 20%, rgba(52,211,153,.12), transparent 60%); }
-    .slide { transition: opacity .7s ease, transform .7s ease; }
-    .slide.hidden-slide { opacity: 0; pointer-events: none; transform: scale(.98); position: absolute; inset: 0; }
     .grid-bg { background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
                                  linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
                background-size: 32px 32px; }
-    .bar > span { display:block; height:100%; border-radius:9999px; background: linear-gradient(90deg,#38bdf8,#34d399); }
-    /* Decorative motion */
-    .ring-spin { animation: spinSlow 9s linear infinite; }
-    @keyframes spinSlow { to { transform: rotate(360deg); } }
-    .float-a { animation: floaty 5s ease-in-out infinite; }
-    .float-b { animation: floaty 6.5s ease-in-out infinite .8s; }
-    .float-c { animation: floaty 7s ease-in-out infinite 1.6s; }
-    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    .glow { background: radial-gradient(600px circle at 15% 0%, rgba(56,189,248,.14), transparent 60%),
+                        radial-gradient(500px circle at 95% 20%, rgba(52,211,153,.10), transparent 60%); }
+    /* Sliding video background */
+    .vslide { opacity: 0; transition: opacity 1.4s ease; }
+    .vslide.active { opacity: 1; }
+    .vdot { width: 8px; height: 8px; border-radius: 9999px; background: rgba(255,255,255,.35); transition: all .3s ease; cursor: pointer; }
+    .vdot.active { background: #38bdf8; width: 26px; }
+    /* Reveal on scroll */
     .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.in { opacity: 1; transform: none; }
+    /* Decorations */
+    .neon { text-shadow: 0 0 24px rgba(56,189,248,.45); }
+    .floaty { animation: floaty 6s ease-in-out infinite; }
+    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+    .pulse-ring { animation: pulseRing 2.5s ease-out infinite; }
+    @keyframes pulseRing { 0% { box-shadow: 0 0 0 0 rgba(52,211,153,.5); } 70% { box-shadow: 0 0 0 14px rgba(52,211,153,0); } 100% { box-shadow: 0 0 0 0 rgba(52,211,153,0); } }
+    .bar > span { display:block; height:100%; border-radius:9999px; background: linear-gradient(90deg,#38bdf8,#34d399); }
     @media (prefers-reduced-motion: reduce) {
-      .ring-spin, .float-a, .float-b, .float-c { animation: none; }
-      .reveal { opacity: 1; transform: none; transition: none; }
+      .vslide, .reveal, .floaty, .pulse-ring { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body class="font-sans text-slate-200 antialiased">
 
   <!-- NAV -->
-  <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-ink/80 border-b border-line">
-    <nav class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
-      <a href="#home" class="font-extrabold text-lg text-white tracking-tight">
-        David<span class="text-sky-400"> Kayigamba</span>
+  <header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-ink/85 border-b border-line">
+    <nav class="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2 font-extrabold text-lg text-white tracking-tight">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-sky-400 to-emerald-500 flex items-center justify-center">
+          <svg class="w-5 h-5 text-ink" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2 4 5.5v6.1C4 16.7 7.4 21 12 22c4.6-1 8-5.3 8-10.4V5.5L12 2Zm0 4.5a3 3 0 0 1 3 3v1.2h1.8v4.6H7.2v-4.6H9V9.5a3 3 0 0 1 3-3Zm0 1.5a1.5 1.5 0 0 0-1.5 1.5v.9h3v-.9A1.5 1.5 0 0 0 12 8Z"/></svg>
+        </span>
+        ThickBing <span class="text-sky-400">Lin Cyber</span>
       </a>
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-        <li><a class="hover:text-sky-400 transition" href="#about">About</a></li>
-        <li><a class="hover:text-sky-400 transition" href="#showcase">Showcase</a></li>
-        <li><a class="hover:text-sky-400 transition" href="#skills">Skills</a></li>
+        <li><a class="hover:text-sky-400 transition" href="#services">Services</a></li>
+        <li><a class="hover:text-sky-400 transition" href="#why">Why Us</a></li>
+        <li><a class="hover:text-sky-400 transition" href="#join">How to Join</a></li>
         <li><a class="hover:text-sky-400 transition" href="#contact">Contact</a></li>
       </ul>
-      <a href="#contact" class="hidden md:inline-block px-4 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-ink font-semibold text-sm transition">Hire Me</a>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="login.html" class="px-4 py-2 rounded-lg border border-line hover:border-sky-400 hover:text-sky-300 text-white font-semibold text-sm transition">Log In</a>
+        <a href="signup.html" class="px-4 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-ink font-semibold text-sm transition">Register</a>
+      </div>
       <button id="menuBtn" class="md:hidden p-2 text-slate-200" aria-label="Menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </nav>
     <div id="mobileMenu" class="hidden md:hidden border-t border-line bg-ink px-5 py-4 space-y-3 text-slate-200 font-medium">
-      <a class="block" href="#about">About</a>
-      <a class="block" href="#showcase">Showcase</a>
-      <a class="block" href="#skills">Skills</a>
+      <a class="block" href="#services">Services</a>
+      <a class="block" href="#why">Why Us</a>
+      <a class="block" href="#join">How to Join</a>
       <a class="block" href="#contact">Contact</a>
+      <div class="flex gap-3 pt-2">
+        <a href="login.html" class="flex-1 text-center px-4 py-2 rounded-lg border border-line text-white font-semibold text-sm">Log In</a>
+        <a href="signup.html" class="flex-1 text-center px-4 py-2 rounded-lg bg-sky-500 text-ink font-semibold text-sm">Register</a>
+      </div>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="home" class="glow relative pt-32 pb-20 overflow-hidden">
-    <div class="absolute inset-0 grid-bg opacity-60 pointer-events-none"></div>
-    <div class="relative max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <span class="inline-flex items-center gap-2 text-xs font-semibold text-emerald-300 bg-emerald-400/10 border border-emerald-400/30 rounded-full px-3 py-1">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Available for opportunities
-        </span>
-        <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
-          Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-400">David Kayigamba</span>
-        </h1>
-        <p class="mt-4 text-xl text-slate-300 font-medium h-8">
-          <span id="typed" class="text-sky-300"></span><span class="animate-pulse text-sky-300">|</span>
-        </p>
-        <p class="mt-5 text-slate-300 text-lg leading-relaxed max-w-xl">
-          I build reliable software, automate delivery pipelines, secure systems and design fast, well-structured databases — turning ideas into dependable products.
-        </p>
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href="#showcase" class="px-6 py-3 rounded-lg bg-sky-500 hover:bg-sky-400 text-ink font-semibold transition">View My Work</a>
-          <a href="#contact" class="px-6 py-3 rounded-lg border border-slate-500 hover:border-sky-400 hover:text-sky-300 text-white font-semibold transition">Contact Me</a>
-        </div>
-      </div>
-
-      <div class="flex justify-center">
-        <div class="relative w-72 h-72 sm:w-80 sm:h-80">
-          <div class="absolute -inset-4 rounded-full bg-gradient-to-tr from-sky-400 to-emerald-400 blur-2xl opacity-30"></div>
-          <!-- Rotating gradient ring -->
-          <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-sky-400 via-emerald-400 to-sky-400 ring-spin"></div>
-          <div class="absolute inset-[3px] rounded-full bg-ink"></div>
-          <!-- Passport photo on a soft gradient backdrop (transparent PNG) -->
-          <div class="absolute inset-[6px] rounded-full overflow-hidden bg-gradient-to-b from-sky-500/25 to-emerald-500/15 grid-bg">
-            <img src="photos/My_passport_photo.png" alt="Portrait of David Kayigamba" width="500" height="500"
-                 class="w-full h-full object-cover object-top scale-105"
-                 onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect width=%22200%22 height=%22200%22 fill=%22%23111a2e%22/><text x=%2250%25%22 y=%2255%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2272%22 font-weight=%22700%22 fill=%22%2338bdf8%22>DK</text></svg>'" />
-          </div>
-          <!-- Floating tech pills -->
-          <span class="float-a absolute -left-4 sm:-left-8 top-10 px-3 py-1.5 rounded-full bg-panel/90 border border-sky-400/40 text-sky-300 text-xs font-mono font-semibold shadow-lg backdrop-blur">&lt;/&gt; JavaScript</span>
-          <span class="float-b absolute -right-4 sm:-right-8 top-1/3 px-3 py-1.5 rounded-full bg-panel/90 border border-emerald-400/40 text-emerald-300 text-xs font-mono font-semibold shadow-lg backdrop-blur">DevOps</span>
-          <span class="float-c absolute left-2 -bottom-3 px-3 py-1.5 rounded-full bg-panel/90 border border-amber-400/40 text-amber-300 text-xs font-mono font-semibold shadow-lg backdrop-blur">SQL</span>
-        </div>
-      </div>
+  <!-- HERO: sliding video background -->
+  <section id="home" class="relative min-h-[92vh] flex items-center overflow-hidden">
+    <div class="absolute inset-0 bg-ink">
+      <video class="vslide active absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto"
+             poster="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&amp;fit=crop&amp;w=1600&amp;q=80">
+        <source src="https://assets.mixkit.co/videos/30869/30869-720.mp4" type="video/mp4" />
+      </video>
+      <video class="vslide absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="metadata"
+             poster="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=1600&amp;q=80">
+        <source src="https://assets.mixkit.co/videos/23159/23159-720.mp4" type="video/mp4" />
+      </video>
+      <video class="vslide absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="metadata"
+             poster="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&amp;fit=crop&amp;w=1600&amp;q=80">
+        <source src="https://assets.mixkit.co/videos/5410/5410-720.mp4" type="video/mp4" />
+      </video>
     </div>
-  </section>
+    <!-- readability overlays -->
+    <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/30"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/60"></div>
+    <div class="absolute inset-0 grid-bg opacity-40 pointer-events-none"></div>
 
-  <!-- ABOUT -->
-  <section id="about" class="py-20 border-t border-line">
-    <div class="max-w-6xl mx-auto px-5">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="reveal">
-          <h2 class="text-3xl font-bold text-white">About Me</h2>
-          <div class="mt-2 h-1 w-16 bg-sky-400 rounded"></div>
-          <p class="mt-6 text-slate-300 text-lg leading-relaxed">
-            I'm <strong class="text-white">David Kayigamba</strong>, a technology professional focused on building secure, scalable and well-automated systems.
-            I enjoy working across the full stack of modern engineering — writing clean code, shipping it through CI/CD pipelines,
-            protecting it against threats, and storing data efficiently.
-          </p>
-          <p class="mt-4 text-slate-300 text-lg leading-relaxed">
-            My goal is simple: deliver solutions that are fast, safe and easy to maintain.
-          </p>
-          <a href="#showcase" class="mt-6 inline-flex items-center gap-2 text-sky-400 hover:text-sky-300 font-semibold transition">
-            Explore my work
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+    <div class="relative w-full max-w-7xl mx-auto px-5 pt-28 pb-20">
+      <div class="max-w-3xl">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold text-emerald-300 bg-emerald-400/10 border border-emerald-400/30 rounded-full px-3 py-1.5 backdrop-blur">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Trusted by 500+ organizations worldwide
+        </span>
+
+        <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+          Welcome to<br class="hidden sm:block" />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-400 neon">ThickBing Lin Cyber</span>
+        </h1>
+
+        <p class="mt-4 text-xl sm:text-2xl text-slate-300 font-medium h-9">
+          <span class="text-sky-300 font-semibold">We provide&nbsp;</span><span id="typed" class="text-emerald-300 font-semibold"></span><span class="animate-pulse text-emerald-300">|</span>
+        </p>
+
+        <p class="mt-5 text-slate-300 text-lg leading-relaxed max-w-2xl">
+          A global cybersecurity firm defending enterprises, banks and governments around the clock —
+          with 24/7 monitoring, ethical hacking and intelligence-driven protection.
+          Register today and onboard onto our online security services in minutes.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="signup.html" class="px-7 py-3.5 rounded-lg bg-gradient-to-r from-sky-500 to-emerald-500 hover:from-sky-400 hover:to-emerald-400 text-ink font-bold transition shadow-lg shadow-sky-500/25 pulse-ring">
+            Register for Online Services
+          </a>
+          <a href="#services" class="px-7 py-3.5 rounded-lg border border-slate-500 hover:border-sky-400 hover:text-sky-300 text-white font-semibold transition backdrop-blur bg-white/5">
+            Explore Services
           </a>
         </div>
 
-        <div class="reveal relative">
-          <div class="absolute -inset-3 rounded-3xl bg-gradient-to-tr from-sky-400/25 to-emerald-400/25 blur-xl"></div>
-          <figure class="relative rounded-2xl overflow-hidden border border-line bg-white shadow-2xl shadow-sky-500/10">
-            <img src="photos/code.png" alt="Illustration of a developer writing code at a desk"
-                 width="1280" height="1280" loading="lazy" decoding="async"
-                 class="w-full h-auto hover:scale-105 transition duration-500" />
-            <figcaption class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-ink via-ink/85 to-transparent px-5 pt-12 pb-4 text-sm font-mono text-slate-300">
-              <span class="text-emerald-400">const</span> david = { focus: <span class="text-sky-300">"clean code"</span>, coffee: <span class="text-amber-300">true</span> };
-            </figcaption>
-          </figure>
+        <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-slate-400 font-medium">
+          <span class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0l-3.5-3.5a1 1 0 1 1 1.4-1.4l2.8 2.8 6.8-6.8a1 1 0 0 1 1.4 0Z"/></svg> ISO 27001 Certified</span>
+          <span class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0l-3.5-3.5a1 1 0 1 1 1.4-1.4l2.8 2.8 6.8-6.8a1 1 0 0 1 1.4 0Z"/></svg> SOC 2 Type II</span>
+          <span class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0l-3.5-3.5a1 1 0 1 1 1.4-1.4l2.8 2.8 6.8-6.8a1 1 0 0 1 1.4 0Z"/></svg> 99.9% Uptime SLA</span>
         </div>
       </div>
 
-      <div class="reveal mt-12 grid sm:grid-cols-3 gap-4">
-        <div class="bg-panel border border-line rounded-xl p-5 text-center">
-          <div class="text-3xl font-extrabold text-sky-400">4</div>
-          <div class="text-sm text-slate-300 mt-1">Core Disciplines</div>
+      <!-- video slide indicators -->
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2" id="vdots">
+        <span class="vdot active" role="button" aria-label="Video 1"></span>
+        <span class="vdot" role="button" aria-label="Video 2"></span>
+        <span class="vdot" role="button" aria-label="Video 3"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="border-y border-line bg-panel/60">
+    <div class="max-w-7xl mx-auto px-5 py-10 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal">
+        <div class="text-3xl sm:text-4xl font-extrabold text-sky-400"><span class="counter" data-target="500" data-suffix="+">0</span></div>
+        <div class="mt-1 text-sm text-slate-300">Clients Protected</div>
+      </div>
+      <div class="reveal">
+        <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400"><span class="counter" data-target="12" data-suffix="M+">0</span></div>
+        <div class="mt-1 text-sm text-slate-300">Threats Blocked Daily</div>
+      </div>
+      <div class="reveal">
+        <div class="text-3xl sm:text-4xl font-extrabold text-sky-400"><span class="counter" data-target="99" data-suffix=".9%">0</span></div>
+        <div class="mt-1 text-sm text-slate-300">Uptime SLA</div>
+      </div>
+      <div class="reveal">
+        <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400"><span class="counter" data-target="24" data-suffix="/7">0</span></div>
+        <div class="mt-1 text-sm text-slate-300">SOC Coverage</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-24 glow">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-xs font-mono font-semibold tracking-widest text-sky-400">OUR SERVICES</span>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-white">Key Services That Keep You Secure</h2>
+        <div class="mt-3 h-1 w-20 bg-gradient-to-r from-sky-400 to-emerald-400 rounded mx-auto"></div>
+        <p class="mt-5 text-slate-300">Full-spectrum cyber defense — pick a service and register to activate it on your dashboard.</p>
+      </div>
+
+      <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+        <!-- 1 -->
+        <article class="group reveal relative rounded-2xl overflow-hidden border border-line bg-panel hover:border-sky-400/60 transition duration-300 hover:-translate-y-1.5">
+          <div class="h-44 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Server room monitored around the clock" loading="lazy"
+                 class="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-panel via-panel/20 to-transparent"></div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-mono font-bold bg-ink/85 border border-sky-400/40 text-sky-300">01</span>
+          </div>
+          <div class="p-6 -mt-8 relative">
+            <h3 class="text-lg font-bold text-white">24/7 Threat Monitoring</h3>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">Our SOC watches your network every second of every day, detecting and neutralizing threats before they reach you.</p>
+            <a href="signup.html" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-sky-400 hover:text-sky-300 transition">Subscribe to service
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="group reveal relative rounded-2xl overflow-hidden border border-line bg-panel hover:border-rose-400/60 transition duration-300 hover:-translate-y-1.5">
+          <div class="h-44 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Ethical hacking and penetration testing" loading="lazy"
+                 class="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-panel via-panel/20 to-transparent"></div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-mono font-bold bg-ink/85 border border-rose-400/40 text-rose-300">02</span>
+          </div>
+          <div class="p-6 -mt-8 relative">
+            <h3 class="text-lg font-bold text-white">Penetration Testing</h3>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">Certified ethical hackers attack your systems the way real adversaries would — so you can fix weaknesses first.</p>
+            <a href="signup.html" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-rose-400 hover:text-rose-300 transition">Subscribe to service
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="group reveal relative rounded-2xl overflow-hidden border border-line bg-panel hover:border-emerald-400/60 transition duration-300 hover:-translate-y-1.5">
+          <div class="h-44 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Global cloud network" loading="lazy"
+                 class="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-panel via-panel/20 to-transparent"></div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-mono font-bold bg-ink/85 border border-emerald-400/40 text-emerald-300">03</span>
+          </div>
+          <div class="p-6 -mt-8 relative">
+            <h3 class="text-lg font-bold text-white">Cloud Security</h3>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">Hardened configurations, identity governance and continuous compliance for AWS, Azure and GCP workloads.</p>
+            <a href="signup.html" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition">Subscribe to service
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="group reveal relative rounded-2xl overflow-hidden border border-line bg-panel hover:border-sky-400/60 transition duration-300 hover:-translate-y-1.5">
+          <div class="h-44 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Network infrastructure circuitry" loading="lazy"
+                 class="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-panel via-panel/20 to-transparent"></div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-mono font-bold bg-ink/85 border border-sky-400/40 text-sky-300">04</span>
+          </div>
+          <div class="p-6 -mt-8 relative">
+            <h3 class="text-lg font-bold text-white">Network Defense</h3>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">Firewalls, segmentation and intrusion prevention engineered by experts and tuned to your traffic.</p>
+            <a href="signup.html" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-sky-400 hover:text-sky-300 transition">Subscribe to service
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="group reveal relative rounded-2xl overflow-hidden border border-line bg-panel hover:border-amber-400/60 transition duration-300 hover:-translate-y-1.5">
+          <div class="h-44 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Encrypted data protection" loading="lazy"
+                 class="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-panel via-panel/20 to-transparent"></div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-mono font-bold bg-ink/85 border border-amber-400/40 text-amber-300">05</span>
+          </div>
+          <div class="p-6 -mt-8 relative">
+            <h3 class="text-lg font-bold text-white">Data Protection &amp; Compliance</h3>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">Encryption, DLP and audit-ready compliance for GDPR, PCI-DSS and ISO 27001 — your data, locked down.</p>
+            <a href="signup.html" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-amber-400 hover:text-amber-300 transition">Subscribe to service
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <!-- 6 -->
+        <article class="group reveal relative rounded-2xl overflow-hidden border border-line bg-panel hover:border-emerald-400/60 transition duration-300 hover:-translate-y-1.5">
+          <div class="h-44 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Cyber security awareness training" loading="lazy"
+                 class="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-panel via-panel/20 to-transparent"></div>
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-mono font-bold bg-ink/85 border border-emerald-400/40 text-emerald-300">06</span>
+          </div>
+          <div class="p-6 -mt-8 relative">
+            <h3 class="text-lg font-bold text-white">Security Awareness Training</h3>
+            <p class="mt-2 text-sm text-slate-300 leading-relaxed">Phishing simulations and hands-on training that turn your team into a human firewall.</p>
+            <a href="signup.html" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition">Subscribe to service
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why" class="py-24 border-t border-line bg-panel/40">
+    <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="reveal relative">
+        <div class="absolute -inset-3 rounded-3xl bg-gradient-to-tr from-sky-400/25 to-emerald-400/25 blur-xl"></div>
+        <div class="relative rounded-2xl overflow-hidden border border-line">
+          <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&amp;fit=crop&amp;w=1100&amp;q=80" alt="ThickBing Lin Cyber analyst at work" loading="lazy"
+               class="w-full h-[340px] sm:h-[420px] object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent"></div>
         </div>
-        <div class="bg-panel border border-line rounded-xl p-5 text-center">
-          <div class="text-3xl font-extrabold text-emerald-400">24/7</div>
-          <div class="text-sm text-slate-300 mt-1">Automation Mindset</div>
+        <div class="floaty absolute -right-2 sm:right-6 bottom-6 bg-ink/90 backdrop-blur border border-emerald-400/40 rounded-xl px-4 py-3 shadow-xl">
+          <div class="text-xs text-slate-400">Average response time</div>
+          <div class="text-xl font-extrabold text-emerald-400">&lt; 8 minutes</div>
         </div>
-        <div class="bg-panel border border-line rounded-xl p-5 text-center">
-          <div class="text-2xl font-extrabold text-white">Secure by Design</div>
-          <div class="text-sm text-slate-300 mt-1">Security in every layer</div>
+      </div>
+
+      <div class="reveal">
+        <span class="text-xs font-mono font-semibold tracking-widest text-emerald-400">WHY THICKBING LIN CYBER</span>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-white">Security built on speed, skill and trust</h2>
+        <div class="mt-3 h-1 w-20 bg-gradient-to-r from-sky-400 to-emerald-400 rounded"></div>
+
+        <ul class="mt-7 space-y-4">
+          <li class="flex gap-3">
+            <span class="shrink-0 w-6 h-6 rounded-full bg-emerald-400/15 border border-emerald-400/40 flex items-center justify-center text-emerald-400 text-xs font-bold">✓</span>
+            <p class="text-slate-300"><strong class="text-white">Real-time intelligence:</strong> global threat feeds enrich every alert we send you.</p>
+          </li>
+          <li class="flex gap-3">
+            <span class="shrink-0 w-6 h-6 rounded-full bg-emerald-400/15 border border-emerald-400/40 flex items-center justify-center text-emerald-400 text-xs font-bold">✓</span>
+            <p class="text-slate-300"><strong class="text-white">Certified experts:</strong> OSCP, CISSP and CISM engineers on every account.</p>
+          </li>
+          <li class="flex gap-3">
+            <span class="shrink-0 w-6 h-6 rounded-full bg-emerald-400/15 border border-emerald-400/40 flex items-center justify-center text-emerald-400 text-xs font-bold">✓</span>
+            <p class="text-slate-300"><strong class="text-white">Online dashboard:</strong> manage services, reports and incidents from one portal.</p>
+          </li>
+          <li class="flex gap-3">
+            <span class="shrink-0 w-6 h-6 rounded-full bg-emerald-400/15 border border-emerald-400/40 flex items-center justify-center text-emerald-400 text-xs font-bold">✓</span>
+            <p class="text-slate-300"><strong class="text-white">Transparent pricing:</strong> subscribe per service — cancel or upgrade anytime.</p>
+          </li>
+        </ul>
+
+        <div class="mt-8 flex items-center gap-4 bg-panel border border-line rounded-xl p-4">
+          <img src="photos/My_passport_photo.png" alt="David Kayigamba, Founder" width="500" height="500"
+               class="w-14 h-14 rounded-full object-cover object-top border-2 border-sky-400/60 bg-gradient-to-b from-sky-500/25 to-emerald-500/15" />
+          <div>
+            <p class="text-sm text-slate-300 italic">"We founded this company on one belief: security should never be a luxury."</p>
+            <p class="mt-1 text-sm font-bold text-white">David Kayigamba <span class="font-normal text-slate-400">— Founder &amp; CEO</span></p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SLIDER SHOWCASE -->
-  <section id="showcase" class="py-20 border-t border-line bg-panel/40">
-    <div class="max-w-6xl mx-auto px-5">
-      <div class="text-center">
-        <h2 class="text-3xl font-bold text-white">Professional Showcase</h2>
-        <div class="mt-2 h-1 w-16 bg-sky-400 rounded mx-auto"></div>
-        <p class="mt-4 text-slate-300">Four areas where I deliver real value.</p>
+  <!-- HOW TO JOIN -->
+  <section id="join" class="py-24 border-t border-line">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-xs font-mono font-semibold tracking-widest text-sky-400">GET STARTED</span>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-white">Join Us in Three Simple Steps</h2>
+        <div class="mt-3 h-1 w-20 bg-gradient-to-r from-sky-400 to-emerald-400 rounded mx-auto"></div>
+        <p class="mt-5 text-slate-300">Create your account, fill in your details and unlock your security dashboard the same day.</p>
       </div>
 
-      <div id="slider" class="relative mt-10 h-[380px] sm:h-[340px] rounded-2xl overflow-hidden border border-line bg-ink">
-
-        <!-- Slide 1: Coding -->
-        <div class="slide absolute inset-0 grid sm:grid-cols-2 items-center gap-6 p-8 bg-gradient-to-br from-sky-950 via-ink to-ink">
-          <div>
-            <div class="text-sky-400 font-mono text-sm font-semibold">01 / CODING</div>
-            <h3 class="mt-2 text-3xl font-bold text-white">Software Development</h3>
-            <p class="mt-3 text-slate-300">Clean, testable and maintainable code for web apps, APIs and automation tools.</p>
-            <div class="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
-              <span class="px-3 py-1 rounded-full bg-sky-400/15 text-sky-200 border border-sky-400/30">JavaScript</span>
-              <span class="px-3 py-1 rounded-full bg-sky-400/15 text-sky-200 border border-sky-400/30">Python</span>
-              <span class="px-3 py-1 rounded-full bg-sky-400/15 text-sky-200 border border-sky-400/30">HTML / CSS</span>
-              <span class="px-3 py-1 rounded-full bg-sky-400/15 text-sky-200 border border-sky-400/30">APIs</span>
-            </div>
-          </div>
-          <div class="hidden sm:block">
-            <svg viewBox="0 0 320 200" class="w-full max-w-sm mx-auto">
-              <rect x="10" y="10" width="300" height="180" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-opacity=".5"/>
-              <circle cx="30" cy="28" r="5" fill="#f87171"/><circle cx="48" cy="28" r="5" fill="#fbbf24"/><circle cx="66" cy="28" r="5" fill="#34d399"/>
-              <g font-family="monospace" font-size="13">
-                <text x="28" y="65" fill="#38bdf8">function</text><text x="92" y="65" fill="#e2e8f0"> build() {</text>
-                <text x="44" y="90" fill="#34d399">const</text><text x="90" y="90" fill="#e2e8f0"> app = ship();</text>
-                <text x="44" y="115" fill="#a78bfa">return</text><text x="92" y="115" fill="#e2e8f0"> quality;</text>
-                <text x="28" y="140" fill="#e2e8f0">}</text>
-              </g>
-              <rect x="28" y="156" width="8" height="16" fill="#38bdf8"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>
-            </svg>
-          </div>
+      <div class="mt-14 grid md:grid-cols-3 gap-7">
+        <div class="reveal relative bg-panel border border-line rounded-2xl p-7 hover:border-sky-400/60 transition">
+          <div class="w-12 h-12 rounded-xl bg-sky-400/15 border border-sky-400/30 flex items-center justify-center font-mono font-bold text-sky-300 text-lg">01</div>
+          <h3 class="mt-5 text-lg font-bold text-white">Create Your Account</h3>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">Fill the short registration form with your details and choose the online services you need.</p>
+          <a href="signup.html" class="mt-4 inline-block text-sm font-semibold text-sky-400 hover:text-sky-300 transition">Start registration →</a>
         </div>
-
-        <!-- Slide 2: DevOps -->
-        <div class="slide hidden-slide grid sm:grid-cols-2 items-center gap-6 p-8 bg-gradient-to-br from-emerald-950 via-ink to-ink">
-          <div>
-            <div class="text-emerald-400 font-mono text-sm font-semibold">02 / DEVOPS</div>
-            <h3 class="mt-2 text-3xl font-bold text-white">DevOps &amp; Automation</h3>
-            <p class="mt-3 text-slate-300">CI/CD pipelines, containers and infrastructure that deploy fast and run reliably.</p>
-            <div class="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
-              <span class="px-3 py-1 rounded-full bg-emerald-400/15 text-emerald-200 border border-emerald-400/30">Git</span>
-              <span class="px-3 py-1 rounded-full bg-emerald-400/15 text-emerald-200 border border-emerald-400/30">Docker</span>
-              <span class="px-3 py-1 rounded-full bg-emerald-400/15 text-emerald-200 border border-emerald-400/30">CI/CD</span>
-              <span class="px-3 py-1 rounded-full bg-emerald-400/15 text-emerald-200 border border-emerald-400/30">Linux</span>
-            </div>
-          </div>
-          <div class="hidden sm:block">
-            <svg viewBox="0 0 320 200" class="w-full max-w-sm mx-auto">
-              <g fill="#0f172a" stroke="#34d399" stroke-width="2">
-                <rect x="15" y="75" width="60" height="50" rx="10"/><rect x="130" y="75" width="60" height="50" rx="10"/><rect x="245" y="75" width="60" height="50" rx="10"/>
-              </g>
-              <g stroke="#34d399" stroke-width="3" stroke-dasharray="6 6" fill="none">
-                <path d="M75 100 H130"><animate attributeName="stroke-dashoffset" from="12" to="0" dur="1s" repeatCount="indefinite"/></path>
-                <path d="M190 100 H245"><animate attributeName="stroke-dashoffset" from="12" to="0" dur="1s" repeatCount="indefinite"/></path>
-              </g>
-              <g font-family="Arial" font-size="13" font-weight="700" fill="#d1fae5" text-anchor="middle">
-                <text x="45" y="105">BUILD</text><text x="160" y="105">TEST</text><text x="275" y="105">DEPLOY</text>
-              </g>
-            </svg>
-          </div>
+        <div class="reveal relative bg-panel border border-line rounded-2xl p-7 hover:border-emerald-400/60 transition">
+          <div class="w-12 h-12 rounded-xl bg-emerald-400/15 border border-emerald-400/30 flex items-center justify-center font-mono font-bold text-emerald-300 text-lg">02</div>
+          <h3 class="mt-5 text-lg font-bold text-white">Verify Your Identity</h3>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">Confirm your email and complete a secure identity check to activate your membership.</p>
+          <span class="mt-4 inline-block text-sm font-semibold text-slate-500">Takes under 5 minutes</span>
         </div>
-
-        <!-- Slide 3: Cyber -->
-        <div class="slide hidden-slide grid sm:grid-cols-2 items-center gap-6 p-8 bg-gradient-to-br from-rose-950 via-ink to-ink">
-          <div>
-            <div class="text-rose-400 font-mono text-sm font-semibold">03 / CYBER SECURITY</div>
-            <h3 class="mt-2 text-3xl font-bold text-white">Cyber Security</h3>
-            <p class="mt-3 text-slate-300">Protecting systems and data through secure configuration, monitoring and risk awareness.</p>
-            <div class="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
-              <span class="px-3 py-1 rounded-full bg-rose-400/15 text-rose-200 border border-rose-400/30">Network Security</span>
-              <span class="px-3 py-1 rounded-full bg-rose-400/15 text-rose-200 border border-rose-400/30">Hardening</span>
-              <span class="px-3 py-1 rounded-full bg-rose-400/15 text-rose-200 border border-rose-400/30">Vulnerability Scanning</span>
-              <span class="px-3 py-1 rounded-full bg-rose-400/15 text-rose-200 border border-rose-400/30">Encryption</span>
-            </div>
-          </div>
-          <div class="hidden sm:block">
-            <svg viewBox="0 0 320 200" class="w-full max-w-sm mx-auto">
-              <path d="M160 20 L250 55 V105 C250 150 210 175 160 190 C110 175 70 150 70 105 V55 Z" fill="#1f0a12" stroke="#fb7185" stroke-width="3"/>
-              <rect x="135" y="95" width="50" height="40" rx="6" fill="#fb7185"/>
-              <path d="M143 95 V82 a17 17 0 0 1 34 0 V95" fill="none" stroke="#fda4af" stroke-width="6"/>
-              <circle cx="160" cy="113" r="5" fill="#1f0a12"/>
-              <circle cx="160" cy="105" r="95" fill="none" stroke="#fb7185" stroke-opacity=".25"><animate attributeName="r" values="70;100;70" dur="3s" repeatCount="indefinite"/></circle>
-            </svg>
-          </div>
-        </div>
-
-        <!-- Slide 4: Database -->
-        <div class="slide hidden-slide grid sm:grid-cols-2 items-center gap-6 p-8 bg-gradient-to-br from-amber-950 via-ink to-ink">
-          <div>
-            <div class="text-amber-400 font-mono text-sm font-semibold">04 / DATABASES</div>
-            <h3 class="mt-2 text-3xl font-bold text-white">Database Engineering</h3>
-            <p class="mt-3 text-slate-300">Well-designed schemas, optimized queries, backups and secure data access.</p>
-            <div class="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
-              <span class="px-3 py-1 rounded-full bg-amber-400/15 text-amber-200 border border-amber-400/30">SQL</span>
-              <span class="px-3 py-1 rounded-full bg-amber-400/15 text-amber-200 border border-amber-400/30">MySQL / PostgreSQL</span>
-              <span class="px-3 py-1 rounded-full bg-amber-400/15 text-amber-200 border border-amber-400/30">Data Modeling</span>
-              <span class="px-3 py-1 rounded-full bg-amber-400/15 text-amber-200 border border-amber-400/30">Backups</span>
-            </div>
-          </div>
-          <div class="hidden sm:block">
-            <svg viewBox="0 0 320 200" class="w-full max-w-sm mx-auto">
-              <g fill="#1c1305" stroke="#fbbf24" stroke-width="3">
-                <path d="M100 50 v100 c0 17 27 30 60 30 s60-13 60-30 V50"/>
-                <ellipse cx="160" cy="50" rx="60" ry="22"/>
-              </g>
-              <g fill="none" stroke="#fbbf24" stroke-width="3">
-                <path d="M100 83 c0 17 27 30 60 30 s60-13 60-30"/>
-                <path d="M100 117 c0 17 27 30 60 30 s60-13 60-30"/>
-              </g>
-              <circle cx="160" cy="50" r="5" fill="#fbbf24"><animate attributeName="opacity" values="1;.2;1" dur="1.5s" repeatCount="indefinite"/></circle>
-            </svg>
-          </div>
-        </div>
-
-        <!-- Controls -->
-        <button id="prev" aria-label="Previous" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white text-xl z-10">&#8249;</button>
-        <button id="next" aria-label="Next" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white text-xl z-10">&#8250;</button>
-        <div id="dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="py-20 border-t border-line">
-    <div class="max-w-6xl mx-auto px-5">
-      <div class="text-center">
-        <h2 class="text-3xl font-bold text-white">Skills &amp; Expertise</h2>
-        <div class="mt-2 h-1 w-16 bg-sky-400 rounded mx-auto"></div>
-      </div>
-
-      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-panel border border-line rounded-xl p-6 hover:-translate-y-1 hover:border-sky-400 transition">
-          <div class="w-12 h-12 rounded-lg bg-sky-400/15 text-sky-300 flex items-center justify-center text-2xl font-mono font-bold">&lt;/&gt;</div>
-          <h3 class="mt-4 text-lg font-bold text-white">Coding</h3>
-          <p class="mt-2 text-sm text-slate-300">Web development, scripting and API design with clean practices.</p>
-          <div class="mt-4 h-2 bg-ink rounded-full bar"><span style="width:85%"></span></div>
-        </div>
-        <div class="bg-panel border border-line rounded-xl p-6 hover:-translate-y-1 hover:border-emerald-400 transition">
-          <div class="w-12 h-12 rounded-lg bg-emerald-400/15 text-emerald-300 flex items-center justify-center text-2xl">&#9881;</div>
-          <h3 class="mt-4 text-lg font-bold text-white">DevOps</h3>
-          <p class="mt-2 text-sm text-slate-300">CI/CD, containers, Linux servers and infrastructure automation.</p>
-          <div class="mt-4 h-2 bg-ink rounded-full bar"><span style="width:80%"></span></div>
-        </div>
-        <div class="bg-panel border border-line rounded-xl p-6 hover:-translate-y-1 hover:border-rose-400 transition">
-          <div class="w-12 h-12 rounded-lg bg-rose-400/15 text-rose-300 flex items-center justify-center text-2xl">&#128274;</div>
-          <h3 class="mt-4 text-lg font-bold text-white">Cyber Security</h3>
-          <p class="mt-2 text-sm text-slate-300">Secure configuration, threat awareness and vulnerability assessment.</p>
-          <div class="mt-4 h-2 bg-ink rounded-full bar"><span style="width:78%"></span></div>
-        </div>
-        <div class="bg-panel border border-line rounded-xl p-6 hover:-translate-y-1 hover:border-amber-400 transition">
-          <div class="w-12 h-12 rounded-lg bg-amber-400/15 text-amber-300 flex items-center justify-center text-2xl">&#128451;</div>
-          <h3 class="mt-4 text-lg font-bold text-white">Databases</h3>
-          <p class="mt-2 text-sm text-slate-300">Schema design, SQL optimization, backup and recovery.</p>
-          <div class="mt-4 h-2 bg-ink rounded-full bar"><span style="width:82%"></span></div>
+        <div class="reveal relative bg-panel border border-line rounded-2xl p-7 hover:border-sky-400/60 transition">
+          <div class="w-12 h-12 rounded-xl bg-sky-400/15 border border-sky-400/30 flex items-center justify-center font-mono font-bold text-sky-300 text-lg">03</div>
+          <h3 class="mt-5 text-lg font-bold text-white">Access Your Dashboard</h3>
+          <p class="mt-2 text-sm text-slate-300 leading-relaxed">Log in to view live threat reports, manage services and reach your dedicated security advisor.</p>
+          <a href="login.html" class="mt-4 inline-block text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition">Go to login →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT Information -->
-  <section id="contact" class="py-20 border-t border-line bg-panel/40">
-    <div class="reveal max-w-3xl mx-auto px-5 text-center">
-      <img src="photos/My_passport_photo.png" alt="David Kayigamba" width="500" height="500" loading="lazy"
-           class="mx-auto w-24 h-24 rounded-full object-cover object-top border-2 border-sky-400/50 bg-gradient-to-b from-sky-500/25 to-emerald-500/15" />
-      <h2 class="mt-6 text-3xl font-bold text-white">Let's Work Together</h2>
-      <div class="mt-2 h-1 w-16 bg-sky-400 rounded mx-auto"></div>
-      <p class="mt-5 text-slate-300 text-lg">Have a project, a role or an idea? Send me a message and I'll get back to you.</p>
+  <!-- CONTACT / CTA -->
+  <section id="contact" class="relative py-24 border-t border-line overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="" aria-hidden="true" loading="lazy"
+         class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-ink/90"></div>
+    <div class="absolute inset-0 grid-bg opacity-40"></div>
+
+    <div class="relative max-w-7xl mx-auto px-5 text-center">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Ready to secure your digital future?</h2>
+      <p class="mt-4 text-slate-300 text-lg max-w-2xl mx-auto">Register for ThickBing Lin Cyber online services today — your first vulnerability assessment is free.</p>
 
       <div class="mt-8 flex flex-wrap justify-center gap-4">
-        <!-- Replace the links below with your real details -->
-        <a href="mailto:your-email@example.com" class="px-6 py-3 rounded-lg bg-sky-500 hover:bg-sky-400 text-ink font-semibold transition">Email Me</a>
-        <a href="https://github.com/your-username" target="_blank" rel="noopener" class="px-6 py-3 rounded-lg border border-slate-500 hover:border-sky-400 hover:text-sky-300 text-white font-semibold transition">GitHub</a>
-        <a href="https://linkedin.com/in/your-username" target="_blank" rel="noopener" class="px-6 py-3 rounded-lg border border-slate-500 hover:border-sky-400 hover:text-sky-300 text-white font-semibold transition">LinkedIn</a>
+        <a href="signup.html" class="px-7 py-3.5 rounded-lg bg-gradient-to-r from-sky-500 to-emerald-500 hover:from-sky-400 hover:to-emerald-400 text-ink font-bold transition shadow-lg shadow-sky-500/25">Create Free Account</a>
+        <a href="mailto:hello@thickbinglincyber.com" class="px-7 py-3.5 rounded-lg border border-slate-500 hover:border-sky-400 hover:text-sky-300 text-white font-semibold transition">Talk to Sales</a>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto text-left">
+        <div class="bg-panel/80 backdrop-blur border border-line rounded-xl p-5">
+          <div class="text-xs font-mono text-sky-400 font-semibold">EMAIL</div>
+          <a href="mailto:hello@thickbinglincyber.com" class="mt-1 block text-sm text-white hover:text-sky-300 transition">hello@thickbinglincyber.com</a>
+        </div>
+        <div class="bg-panel/80 backdrop-blur border border-line rounded-xl p-5">
+          <div class="text-xs font-mono text-emerald-400 font-semibold">HOTLINE</div>
+          <a href="tel:+15550104477" class="mt-1 block text-sm text-white hover:text-emerald-300 transition">+1 (555) 010-4477</a>
+        </div>
+        <div class="bg-panel/80 backdrop-blur border border-line rounded-xl p-5">
+          <div class="text-xs font-mono text-amber-400 font-semibold">HEADQUARTERS</div>
+          <p class="mt-1 text-sm text-white">Innovation Tower, Kigali, Rwanda</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="py-6 text-center text-sm text-slate-400 border-t border-line">
-    &copy; <span id="year"></span> David Kayigamba. All rights reserved.
+  <!-- FOOTER -->
+  <footer class="border-t border-line bg-ink">
+    <div class="max-w-7xl mx-auto px-5 py-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <a href="#home" class="flex items-center gap-2 font-extrabold text-lg text-white">
+          <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-sky-400 to-emerald-500 flex items-center justify-center">
+            <svg class="w-5 h-5 text-ink" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2 4 5.5v6.1C4 16.7 7.4 21 12 22c4.6-1 8-5.3 8-10.4V5.5L12 2Zm0 4.5a3 3 0 0 1 3 3v1.2h1.8v4.6H7.2v-4.6H9V9.5a3 3 0 0 1 3-3Zm0 1.5a1.5 1.5 0 0 0-1.5 1.5v.9h3v-.9A1.5 1.5 0 0 0 12 8Z"/></svg>
+          </span>
+          ThickBing <span class="text-sky-400">Lin Cyber</span>
+        </a>
+        <p class="mt-4 text-sm text-slate-400 leading-relaxed">Global cybersecurity partner protecting enterprises, banks and governments — 24 hours a day, 7 days a week.</p>
+        <div class="mt-5 flex gap-3">
+          <a href="#" aria-label="X" class="w-9 h-9 rounded-lg bg-panel border border-line hover:border-sky-400 flex items-center justify-center text-slate-300 hover:text-sky-300 transition">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.9 2H22l-7.1 8.1L23.3 22h-6.6l-5.2-6.8L5.6 22H2.5l7.6-8.7L1.1 2h6.7l4.7 6.2L18.9 2Zm-1.1 18h1.7L7.3 3.8H5.5L17.8 20Z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-lg bg-panel border border-line hover:border-sky-400 flex items-center justify-center text-slate-300 hover:text-sky-300 transition">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.2 8.4h4.6V24H.2V8.4Zm7.6 0h4.4v2.1h.1c.6-1.2 2.1-2.4 4.4-2.4 4.7 0 5.6 3.1 5.6 7.1V24h-4.6v-7.7c0-1.8 0-4.2-2.6-4.2s-3 2-3 4V24H7.8V8.4Z"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-panel border border-line hover:border-sky-400 flex items-center justify-center text-slate-300 hover:text-sky-300 transition">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M13.5 22v-9h3l.5-3.5h-3.5V7.3c0-1 .3-1.7 1.8-1.7H17V2.5c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v2.6H7V13h3v9h3.5Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold text-white uppercase tracking-wider">Services</h4>
+        <ul class="mt-4 space-y-2.5 text-sm text-slate-400">
+          <li><a href="#services" class="hover:text-sky-400 transition">24/7 Threat Monitoring</a></li>
+          <li><a href="#services" class="hover:text-sky-400 transition">Penetration Testing</a></li>
+          <li><a href="#services" class="hover:text-sky-400 transition">Cloud Security</a></li>
+          <li><a href="#services" class="hover:text-sky-400 transition">Network Defense</a></li>
+          <li><a href="#services" class="hover:text-sky-400 transition">Data Protection</a></li>
+          <li><a href="#services" class="hover:text-sky-400 transition">Security Training</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold text-white uppercase tracking-wider">Company</h4>
+        <ul class="mt-4 space-y-2.5 text-sm text-slate-400">
+          <li><a href="#why" class="hover:text-sky-400 transition">Why Choose Us</a></li>
+          <li><a href="#join" class="hover:text-sky-400 transition">How to Join</a></li>
+          <li><a href="signup.html" class="hover:text-sky-400 transition">Create Account</a></li>
+          <li><a href="login.html" class="hover:text-sky-400 transition">Member Login</a></li>
+          <li><a href="#contact" class="hover:text-sky-400 transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold text-white uppercase tracking-wider">Threat Briefing</h4>
+        <p class="mt-4 text-sm text-slate-400">Monthly intelligence digest. No spam, unsubscribe anytime.</p>
+        <form id="newsletter" class="mt-4 flex gap-2" novalidate>
+          <input type="email" name="email" placeholder="you@company.com" required
+                 class="flex-1 min-w-0 px-3 py-2.5 rounded-lg bg-panel border border-line text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-sky-400" />
+          <button class="px-4 py-2.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-ink text-sm font-bold transition">Join</button>
+        </form>
+        <p id="newsletterMsg" class="hidden mt-2 text-xs font-semibold text-emerald-400">✓ Subscribed — welcome aboard!</p>
+      </div>
+    </div>
+
+    <div class="border-t border-line">
+      <div class="max-w-7xl mx-auto px-5 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+        <p>&copy; <span id="year"></span> ThickBing Lin Cyber. All rights reserved.</p>
+        <p class="flex gap-5"><a href="#" class="hover:text-sky-400 transition">Privacy Policy</a><a href="#" class="hover:text-sky-400 transition">Terms of Service</a><a href="#" class="hover:text-sky-400 transition">Security</a></p>
+      </div>
+    </div>
   </footer>
 
   <script>
@@ -359,54 +474,72 @@
     mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
 
     document.getElementById('year').textContent = new Date().getFullYear();
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // Typing effect
-    const words = ['Software Developer', 'DevOps Engineer', 'Cyber Security Enthusiast', 'Database Specialist'];
+    const words = ['24/7 Threat Monitoring', 'Penetration Testing', 'Cloud Security Operations', 'Incident Response', 'Security Awareness Training'];
     const typed = document.getElementById('typed');
     let w = 0, c = 0, del = false;
     (function type() {
       const word = words[w];
       typed.textContent = word.slice(0, c);
       if (!del && c < word.length) c++;
-      else if (!del) { del = true; return setTimeout(type, 1400); }
+      else if (!del) { del = true; return setTimeout(type, 1600); }
       else if (c > 0) c--;
       else { del = false; w = (w + 1) % words.length; }
-      setTimeout(type, del ? 40 : 80);
+      setTimeout(type, del ? 40 : 75);
     })();
 
-    // Slider
-    const slides = document.querySelectorAll('#slider .slide');
-    const dotsBox = document.getElementById('dots');
-    let idx = 0, timer;
-    slides.forEach((_, i) => {
-      const d = document.createElement('button');
-      d.setAttribute('aria-label', 'Slide ' + (i + 1));
-      d.className = 'w-2.5 h-2.5 rounded-full bg-white/40 transition';
-      d.addEventListener('click', () => { show(i); restart(); });
-      dotsBox.appendChild(d);
-    });
-    function show(n) {
-      idx = (n + slides.length) % slides.length;
-      slides.forEach((s, i) => s.classList.toggle('hidden-slide', i !== idx));
-      [...dotsBox.children].forEach((d, i) => {
-        d.classList.toggle('bg-white', i === idx);
-        d.classList.toggle('bg-white/40', i !== idx);
-        d.classList.toggle('w-6', i === idx);
+    // Sliding video background
+    const vids = [...document.querySelectorAll('.vslide')];
+    const vdots = [...document.querySelectorAll('.vdot')];
+    let vi = 0, vtimer;
+    function showV(n) {
+      vi = (n + vids.length) % vids.length;
+      vids.forEach((v, i) => {
+        v.classList.toggle('active', i === vi);
+        if (i === vi) { v.play().catch(() => {}); } else { v.pause(); }
       });
+      vdots.forEach((d, i) => d.classList.toggle('active', i === vi));
     }
-    function restart() { clearInterval(timer); timer = setInterval(() => show(idx + 1), 4500); }
-    document.getElementById('prev').addEventListener('click', () => { show(idx - 1); restart(); });
-    document.getElementById('next').addEventListener('click', () => { show(idx + 1); restart(); });
-    const slider = document.getElementById('slider');
-    slider.addEventListener('mouseenter', () => clearInterval(timer));
-    slider.addEventListener('mouseleave', restart);
-    show(0); restart();
+    vdots.forEach((d, i) => d.addEventListener('click', () => { showV(i); restartV(); }));
+    function restartV() { clearInterval(vtimer); if (!reduced) vtimer = setInterval(() => showV(vi + 1), 7000); }
+    if (reduced) vids.forEach(v => v.pause()); else vids[0].play().catch(() => {});
+    restartV();
+
+    // Animated counters
+    const cio = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target, target = +el.dataset.target, suffix = el.dataset.suffix || '';
+        const step = Math.max(1, Math.ceil(target / 50));
+        let cur = 0;
+        const id = setInterval(() => {
+          cur += step;
+          if (cur >= target) { cur = target; clearInterval(id); }
+          el.textContent = cur + suffix;
+        }, 30);
+        cio.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.counter').forEach(el => cio.observe(el));
 
     // Scroll reveal
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Newsletter
+    const nl = document.getElementById('newsletter');
+    nl.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = nl.email.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { nl.email.focus(); nl.email.classList.add('border-rose-500'); return; }
+      nl.email.classList.remove('border-rose-500');
+      document.getElementById('newsletterMsg').classList.remove('hidden');
+      nl.reset();
+    });
   </script>
 </body>
 </html>
