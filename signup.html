@@ -93,11 +93,11 @@
         </div>
       </div>
 
-      <!-- success banner -->
+      <!-- status banners -->
       <div id="successBanner" class="hidden mt-6 rounded-xl border border-emerald-400/40 bg-emerald-400/10 p-4 text-sm text-emerald-300">
-        <strong class="font-bold">Registration successful! ✓</strong> Welcome to ThickBing Lin Cyber. Check your inbox for the verification link, then
-        <a href="login.html" class="underline font-semibold">log in</a> to activate your dashboard.
+        <strong class="font-bold">Registration successful! ✓</strong> Your account has been created. Taking you to your dashboard…
       </div>
+      <div id="apiBanner" class="hidden mt-6 rounded-xl border border-rose-400/40 bg-rose-400/10 p-4 text-sm text-rose-300"></div>
 
       <form id="signupForm" novalidate class="mt-8 space-y-5">
         <div class="grid sm:grid-cols-2 gap-5">
@@ -202,16 +202,24 @@
       });
     });
 
-    // Form validation (front-end demo — wire to a backend to store accounts)
+    // Registration: validate locally, then create the account on the server.
     const form = document.getElementById('signupForm');
+    const apiBanner = document.getElementById('apiBanner');
     const showErr = (input, on) => {
       const wrap = input.closest('div');
       const p = wrap.querySelector('.err') || wrap.parentElement.querySelector('.err');
       if (p) p.classList.toggle('hidden', !on);
       input.classList.toggle('border-rose-500', on);
     };
-    form.addEventListener('submit', (e) => {
+    const showApiError = (msg) => {
+      apiBanner.textContent = msg;
+      apiBanner.classList.remove('hidden');
+      apiBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      apiBanner.classList.add('hidden');
       let ok = true;
       const name = form.fullName, email = form.email, phone = form.phone, org = form.org,
             service = form.service, pw = form.password, confirm = form.confirm, terms = document.getElementById('terms');
@@ -225,12 +233,35 @@
       if (confirm.value !== pw.value || !confirm.value) { showErr(confirm, true); ok = false; } else showErr(confirm, false);
       document.getElementById('termsErr').classList.toggle('hidden', terms.checked);
       if (!terms.checked) ok = false;
-
       if (!ok) return;
-      form.classList.add('hidden');
-      const banner = document.getElementById('successBanner');
-      banner.classList.remove('hidden');
-      banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Creating your account…';
+      try {
+        const res = await fetch('/api/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fullName: name.value.trim(), email: email.value.trim(), phone: phone.value.trim(),
+            org: org.value.trim(), service: service.value,
+            password: pw.value, confirm: confirm.value
+          })
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok) {
+          form.classList.add('hidden');
+          document.getElementById('successBanner').classList.remove('hidden');
+          setTimeout(() => { window.location.href = 'dashboard.html'; }, 1200);
+        } else {
+          showApiError(data.error || 'Registration failed. Please try again.');
+        }
+      } catch {
+        showApiError('Could not reach the server. Make sure it is running (npm start) and try again.');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Create Account &amp; Join';
+      }
     });
   </script>
 </body>

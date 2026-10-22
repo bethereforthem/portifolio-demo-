@@ -1529,9 +1529,10 @@
         runIntelSearch(intelQuery.value);
       });
 
-      // Newsletter
+      // Newsletter — saves the subscriber on the server (.data/subscribers.json)
       const nl = document.getElementById("newsletter");
-      nl.addEventListener("submit", (e) => {
+      const nlMsg = document.getElementById("newsletterMsg");
+      nl.addEventListener("submit", async (e) => {
         e.preventDefault();
         const email = nl.email.value.trim();
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -1540,8 +1541,25 @@
           return;
         }
         nl.email.classList.remove("border-rose-500");
-        document.getElementById("newsletterMsg").classList.remove("hidden");
-        nl.reset();
+        try {
+          const res = await fetch("/api/newsletter", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email }),
+          });
+          if (!res.ok) throw new Error("bad status");
+          const data = await res.json().catch(() => ({}));
+          nlMsg.textContent = data.already
+            ? "✓ You are already subscribed!"
+            : "✓ Subscribed — welcome aboard!";
+          nlMsg.classList.remove("hidden");
+          nl.reset();
+        } catch {
+          nlMsg.textContent = "✗ Could not subscribe right now — is the server running?";
+          nlMsg.classList.remove("hidden");
+          nlMsg.classList.remove("text-emerald-400");
+          nlMsg.classList.add("text-rose-400");
+        }
       });
     </script>
   </body>

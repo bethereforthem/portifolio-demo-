@@ -9,6 +9,7 @@
     "dev": "node server.mjs"
   },
   "dependencies": {
-    "exa-js": "2.25.0"
+    "exa-js": "2.25.0",
+    "nodemailer": "^10.2.0"
   }
 }

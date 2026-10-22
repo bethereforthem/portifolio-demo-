@@ -7,6 +7,9 @@
 # Keep the committed template
 !.env.example
 
+# Local account/session/reset-token files (never commit user credentials)
+.data/
+
 # Dependencies and logs
 node_modules/
 npm-debug.log*
